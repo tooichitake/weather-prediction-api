@@ -1,0 +1,57 @@
+{
+    "best_params": {
+        "num_leaves": 170,
+        "learning_rate": 0.013881301527805126,
+        "feature_fraction": 0.8235403030530363,
+        "bagging_fraction": 0.4217272008919318,
+        "bagging_freq": 1,
+        "lambda_l1": 0.0019004943226158019,
+        "lambda_l2": 0.09400151744108605
+    },
+    "final_params": {
+        "objective": "regression",
+        "metric": "rmse",
+        "boosting_type": "gbdt",
+        "verbose": -1,
+        "seed": 32,
+        "force_col_wise": true,
+        "num_leaves": 170,
+        "learning_rate": 0.013881301527805126,
+        "feature_fraction": 0.8235403030530363,
+        "bagging_fraction": 0.4217272008919318,
+        "bagging_freq": 1,
+        "lambda_l1": 0.0019004943226158019,
+        "lambda_l2": 0.09400151744108605
+    },
+    "best_iteration": 155,
+    "primary_metric": "RMSE",
+    "validation_metrics": {
+        "rmse": 11.357885065726112,
+        "mae": 6.1141115187484605,
+        "r2": 0.12443790816880007,
+        "mse": 129.00155316624426
+    },
+    "feature_names": [
+        "weather_code",
+        "temperature_2m_max",
+        "temperature_2m_min",
+        "temperature_2m_mean",
+        "apparent_temperature_max",
+        "apparent_temperature_min",
+        "apparent_temperature_mean",
+        "rain_sum",
+        "precipitation_hours",
+        "sunshine_duration",
+        "daylight_duration",
+        "wind_speed_10m_max",
+        "wind_gusts_10m_max",
+        "wind_direction_10m_dominant",
+        "shortwave_radiation_sum",
+        "et0_fao_evapotranspiration",
+        "month"
+    ],
+    "categorical_features": [
+        "month",
+        "weather_code"
+    ]
+}

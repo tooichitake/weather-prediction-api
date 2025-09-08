@@ -1,0 +1,60 @@
+{
+    "best_params": {
+        "C": 0.047570208995525325
+    },
+    "final_params": {
+        "penalty": "l2",
+        "solver": "lbfgs",
+        "max_iter": 1000,
+        "random_state": 32,
+        "class_weight": "balanced",
+        "C": 0.047570208995525325
+    },
+    "best_threshold": 0.3580380621902162,
+    "primary_metric": "AUC",
+    "secondary_metric": "f1",
+    "validation_metrics": {
+        "accuracy": 0.5209407216494846,
+        "precision": 0.505305978068624,
+        "recall": 0.9416611733684904,
+        "f1": 0.6576887661141805,
+        "auc": 0.621863679807799
+    },
+    "feature_names": [
+        "temperature_2m_max",
+        "temperature_2m_min",
+        "temperature_2m_mean",
+        "apparent_temperature_max",
+        "apparent_temperature_min",
+        "apparent_temperature_mean",
+        "rain_sum",
+        "precipitation_hours",
+        "sunshine_duration",
+        "daylight_duration",
+        "wind_speed_10m_max",
+        "wind_gusts_10m_max",
+        "wind_direction_10m_dominant",
+        "shortwave_radiation_sum",
+        "et0_fao_evapotranspiration",
+        "month_August",
+        "month_December",
+        "month_February",
+        "month_January",
+        "month_July",
+        "month_June",
+        "month_March",
+        "month_May",
+        "month_November",
+        "month_October",
+        "month_September",
+        "weather_code_1",
+        "weather_code_2",
+        "weather_code_3",
+        "weather_code_51",
+        "weather_code_53",
+        "weather_code_55",
+        "weather_code_61",
+        "weather_code_63",
+        "weather_code_65"
+    ]
+}

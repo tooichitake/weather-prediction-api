@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env
+.venv
+
+# Jupyter Notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Test files
+test*.py
+*test.py
+tests/
+
+# Data files (not needed in container)
+data/
+data_2025/
+*.csv
+*.xlsx
+
+# Documentation
+*.md
+docs/
+
+# Git
+.git/
+.gitignore
+.github/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Other scripts
+debug*.py
+demo*.py
+download*.py
+verify*.py
+check*.py
+interactive*.py
+simple*.py
+final*.py
+dataset.py
+
+# Batch files
+*.bat
+
+# Temporary files
+*.tmp
+*.bak
+*~
