@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: weather-prediction-api
+    runtime: docker
+    repo: https://github.com/YOUR_USERNAME/weather-prediction-api
+    region: oregon # or singapore, ohio, frankfurt
+    plan: free # or starter, standard, pro
+    
+    # Health check configuration
+    healthCheckPath: /health/
+    
+    # Environment configuration
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: LOG_LEVEL
+        value: info
+    
+    # Scaling configuration (for paid plans)
+    scaling:
+      minInstances: 1
+      maxInstances: 3
+      targetMemoryPercent: 80
+      targetCPUPercent: 70
+    
+    # Docker configuration
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    
+    # Build configuration
+    buildCommand: # Optional pre-build command
+    
+    # Deploy hooks
+    initialDeployHook: # Optional command to run on first deploy
+    preDeployCommand: # Optional command to run before each deploy
+    
+    # Domains (custom domains for paid plans)
+    domains:
+      - weather-api.yourdomain.com

@@ -1,21 +1,88 @@
 # Weather Prediction API for Sydney
 
-A FastAPI-based machine learning service that provides weather predictions for Sydney, Australia.
+A robust, production-ready FastAPI-based machine learning service that provides weather predictions for Sydney, Australia with enterprise-grade features including error handling, rate limiting, and comprehensive deployment support.
 
-## Features
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-312/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-009688.svg)](https://fastapi.tiangolo.com)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg)](https://www.docker.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+## 🌟 Features
+
+### Core Functionality
 - **Rain Prediction**: Binary classification to predict if it will rain exactly 7 days from a given date
 - **Precipitation Volume Prediction**: Regression to predict cumulated precipitation (mm) for the next 3 days
 
-## Endpoints
+### Production Features
+- **🔒 Robust Error Handling**: Comprehensive error handling with graceful fallbacks
+- **⚡ Rate Limiting**: Built-in rate limiting (100 requests/minute)
+- **🚀 High Performance**: Async request handling with connection pooling
+- **📊 Health Monitoring**: Detailed health checks and system status
+- **🐳 Docker Support**: Multi-stage Docker builds for optimized images
+- **🔄 CI/CD Ready**: GitHub Actions workflows for automated testing and deployment
+- **📝 Comprehensive Documentation**: API usage guides, deployment docs, and troubleshooting
+
+## 🚀 Quick Start
+
+### Local Development
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/weather-prediction-api.git
+cd weather-prediction-api
+```
+
+2. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+3. **Run the API**
+```bash
+uvicorn app.main:app --reload
+```
+
+4. **Access the API**
+- API: http://localhost:8000
+- Interactive docs: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+
+### Docker Deployment
+
+```bash
+# Using Docker Compose (recommended)
+docker-compose up -d
+
+# Using Docker directly
+docker build -t weather-prediction-api .
+docker run -p 8000:8000 weather-prediction-api
+```
+
+## 📚 API Endpoints
 
 ### 1. Root Endpoint
 - **GET** `/`
-- Returns project description, endpoints list, and GitHub repository link
+- Returns comprehensive API information including endpoints, models, and configuration
 
 ### 2. Health Check
 - **GET** `/health/`
-- Returns status 200 with system health information
+- Returns detailed system health including model status, external services, and cache statistics
+```json
+{
+  "status": "healthy",
+  "timestamp": "2025-09-09T10:30:45.123456",
+  "version": "2.0.0",
+  "checks": {
+    "models": {
+      "rain_model": {"loaded": true, "threshold": 0.3297},
+      "precipitation_model": {"loaded": true}
+    },
+    "external_services": {
+      "weather_api": {"status": "healthy", "message": "Connected"}
+    }
+  }
+}
+```
 
 ### 3. Rain Prediction
 - **GET** `/predict/rain/?date=YYYY-MM-DD`
@@ -23,10 +90,15 @@ A FastAPI-based machine learning service that provides weather predictions for S
 - Example response:
 ```json
 {
-  "input_date": "2023-01-01",
+  "input_date": "2025-09-09",
   "prediction": {
-    "date": "2023-01-08",
-    "will_rain": "TRUE"
+    "date": "2025-09-16",
+    "will_rain": "TRUE",
+    "confidence": 0.7823
+  },
+  "metadata": {
+    "model_version": "2.0.0",
+    "threshold": 0.3297
   }
 }
 ```
@@ -37,130 +109,183 @@ A FastAPI-based machine learning service that provides weather predictions for S
 - Example response:
 ```json
 {
-  "input_date": "2023-01-01",
+  "input_date": "2025-09-09",
   "prediction": {
-    "start_date": "2023-01-02",
-    "end_date_date": "2023-01-04",
-    "precipitation_fall": "9.8"
+    "start_date": "2025-09-10",
+    "end_date": "2025-09-12",
+    "precipitation_fall": "12.5"
+  },
+  "metadata": {
+    "model_version": "2.0.0",
+    "unit": "mm",
+    "period_days": 3
   }
 }
 ```
 
-## Installation
+## 🤖 Models
 
-### Local Development
+### Rain Prediction Model
+- **Algorithm**: LightGBM (Gradient Boosting)
+- **Type**: Binary Classification
+- **Threshold**: 0.3297 (optimized for F1 score)
+- **Features**: Weather conditions, temperature, wind, precipitation, sunshine duration, etc.
+- **Output**: "TRUE" or "FALSE" as string
 
-1. Install dependencies:
+### Precipitation Prediction Model
+- **Algorithm**: LightGBM (Gradient Boosting)
+- **Type**: Regression
+- **Target**: 3-day cumulative precipitation (mm)
+- **Features**: Similar to rain prediction model
+- **Output**: Precipitation amount as string (e.g., "12.5")
+
+## 🏗️ Architecture
+
+### Technical Stack
+- **Framework**: FastAPI 0.104.1
+- **ML Library**: LightGBM 4.0.0+
+- **Data Processing**: Pandas, NumPy
+- **Weather Data**: Open Meteo API
+- **Server**: Uvicorn with async support
+- **Container**: Docker with multi-stage builds
+
+### Key Features
+- **Async Processing**: Non-blocking request handling
+- **Connection Pooling**: Efficient external API calls
+- **Caching**: LRU cache for weather data
+- **Error Recovery**: Automatic retries with exponential backoff
+- **Security**: Non-root container user, input validation
+
+## 📦 Deployment
+
+### Supported Platforms
+- **Render** (Recommended) - Automatic deployment via GitHub
+- **AWS** - ECS, App Runner, or Lambda
+- **Google Cloud** - Cloud Run
+- **Heroku** - Container deployment
+- **Self-hosted** - Docker/Docker Compose
+
+### Quick Deploy to Render
+1. Fork this repository
+2. Connect to Render
+3. Use the included `render.yaml` configuration
+4. Deploy!
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
+
+## 🧪 Testing
+
+### API Tests
 ```bash
-pip install -r requirements.txt
-```
+# Run automated tests
+python -m pytest tests/
 
-2. Run the API:
-```bash
-uvicorn app.main:app --reload
-```
-
-3. Access the API:
-   - API: http://localhost:8000
-   - Interactive docs: http://localhost:8000/docs
-
-## Docker
-
-1. Build the Docker image:
-```bash
-docker build -t weather-prediction-api .
-```
-
-2. Run the container:
-```bash
-docker run -p 8000:8000 weather-prediction-api
-```
-
-## Models
-
-The API uses pre-trained LightGBM models:
-
-1. **Rain Prediction Model**
-   - Algorithm: LightGBM (Gradient Boosting)
-   - Threshold: 0.3297 (optimized for F1 score)
-   - Features: Weather conditions, temperature, wind, precipitation, etc.
-   - Returns: "TRUE" or "FALSE" as string
-
-2. **Precipitation Prediction Model**
-   - Algorithm: LightGBM (Gradient Boosting)
-   - Target: 3-day cumulative precipitation (mm)
-   - Features: Similar to rain prediction model
-   - Returns: Precipitation amount as string (e.g., "9.8")
-
-## Technical Implementation
-
-- **Feature Engineering**: Uses current day's weather data to predict future conditions
-- **Data Source**: Real-time weather data from Open Meteo API
-- **Categorical Features**: Month and weather code handled with LightGBM's native categorical support
-- **Sydney Coordinates**: Latitude -33.8678, Longitude 151.2073
-
-## Data Constraints
-
-- Training data: Historical weather data before 2025
-- Production: Accepts any date (historical or future)
-- Location: Sydney, Australia
-
-## Testing
-
-### Quick Test
-```bash
-# Test health endpoint
+# Quick manual test
 curl http://localhost:8000/health/
+curl "http://localhost:8000/predict/rain/?date=2025-09-09"
 
-# Test rain prediction
-curl "http://localhost:8000/predict/rain/?date=2023-01-01"
-
-# Test precipitation prediction
-curl "http://localhost:8000/predict/precipitation/fall?date=2023-01-01"
+# Run integration tests
+python test_api_integration.py
 ```
 
-### Test Scripts
-```bash
-# Simple test
-python simple_test.py
+### CI/CD Pipeline
+- Automated testing on push/PR
+- Code quality checks (Black, Flake8, MyPy)
+- Security scanning (Trivy, TruffleHog)
+- Multi-platform Docker builds
+- Automated deployment to staging/production
 
-# Interactive test
-python interactive_test.py
+## 📖 Documentation
 
-# Format verification
-python final_test.py
+- [API Usage Guide](API_USAGE.md) - Detailed examples and best practices
+- [Deployment Guide](DEPLOYMENT.md) - Comprehensive deployment instructions
+- [Interactive API Docs](http://localhost:8000/docs) - Swagger UI documentation
+- [ReDoc](http://localhost:8000/redoc) - Alternative documentation interface
+
+## 🔧 Configuration
+
+### Environment Variables
+- `PORT`: API port (default: 8000)
+- `LOG_LEVEL`: Logging level (default: info)
+- `PYTHONUNBUFFERED`: Python output buffering (default: 1)
+
+### Rate Limiting
+- Default: 100 requests/minute per IP
+- Configurable in `app/main.py`
+
+## 🚨 Error Handling
+
+The API provides detailed error responses:
+```json
+{
+  "error": {
+    "status_code": 422,
+    "message": "Invalid date format. Use YYYY-MM-DD",
+    "timestamp": "2025-09-09T10:30:45.123456"
+  }
+}
 ```
 
-## API Response Format
+Common status codes:
+- `400`: Bad Request
+- `422`: Invalid input format
+- `429`: Rate limit exceeded
+- `502`: External API error
+- `503`: Service unavailable
 
-The API strictly follows the assignment specifications:
+## 📊 Monitoring
 
-- `will_rain`: Returns "TRUE" or "FALSE" as string (not boolean)
-- `end_date_date`: Uses this exact field name for precipitation end date
-- No extra fields in the response
+### Health Metrics
+- Model loading status
+- External API connectivity
+- Cache performance
+- Request rate and errors
 
-## Deployment
+### Recommended Tools
+- **Uptime**: UptimeRobot, Pingdom
+- **APM**: New Relic, DataDog
+- **Logs**: CloudWatch, ELK Stack
 
-The API is designed to be deployed on Render using the provided Dockerfile.
+## 🛠️ Development
 
-## Project Structure
+### Project Structure
 ```
-api/
+weather-prediction-api/
 ├── app/
 │   └── main.py              # FastAPI application
-├── models/                  # Pre-trained LightGBM models
+├── models/                  # Pre-trained ML models
 │   ├── rain_or_not/
-│   │   ├── rain_or_not_lightgbm.txt
-│   │   └── rain_or_not_lightgbm_info.json
 │   └── precipitation_fall/
-│       ├── precipitation_lightgbm.txt
-│       └── precipitation_lightgbm_info.json
+├── deployment/              # Deployment scripts
+├── .github/workflows/       # CI/CD pipelines
 ├── requirements.txt         # Python dependencies
-├── Dockerfile              # Docker configuration
-├── README.md               # This file
-└── test scripts...         # Various testing scripts
+├── Dockerfile              # Multi-stage Docker build
+├── docker-compose.yml      # Docker Compose config
+├── render.yaml             # Render deployment config
+├── API_USAGE.md            # API usage examples
+├── DEPLOYMENT.md           # Deployment guide
+└── README.md               # This file
 ```
 
-## License
+### Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests
+5. Submit a pull request
+
+## 📄 License
 
 This project is part of the Advanced Machine Learning course (36120) at UTS.
+
+## 🙏 Acknowledgments
+
+- UTS Advanced Machine Learning course team
+- Open Meteo API for weather data
+- FastAPI and LightGBM communities
+
+---
+
+**Version**: 2.0.0  
+**Last Updated**: 2025-09-09  
+**Repository**: https://github.com/tooichitake/weather-prediction-api

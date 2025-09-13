@@ -1,0 +1,136 @@
+name: Test API
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight UTC
+
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-asyncio httpx
+    
+    - name: Start API server
+      run: |
+        uvicorn app.main:app --host 0.0.0.0 --port 8000 &
+        echo "Waiting for API to start..."
+        sleep 15
+        
+    - name: Run API integration tests
+      run: |
+        python -c "
+import httpx
+import sys
+from datetime import datetime, timedelta
+
+# Test configuration
+BASE_URL = 'http://localhost:8000'
+TEST_DATE = datetime.now().strftime('%Y-%m-%d')
+
+print('Testing Weather Prediction API...')
+print(f'Base URL: {BASE_URL}')
+print(f'Test Date: {TEST_DATE}')
+print('-' * 50)
+
+# Test 1: Root endpoint
+try:
+    response = httpx.get(f'{BASE_URL}/')
+    assert response.status_code == 200
+    data = response.json()
+    assert 'project' in data
+    assert 'endpoints' in data
+    assert 'models' in data
+    print('✓ Root endpoint test passed')
+except Exception as e:
+    print(f'✗ Root endpoint test failed: {e}')
+    sys.exit(1)
+
+# Test 2: Health check
+try:
+    response = httpx.get(f'{BASE_URL}/health/')
+    assert response.status_code == 200
+    data = response.json()
+    assert data['status'] in ['healthy', 'degraded']
+    assert 'checks' in data
+    print('✓ Health check test passed')
+except Exception as e:
+    print(f'✗ Health check test failed: {e}')
+    sys.exit(1)
+
+# Test 3: Rain prediction
+try:
+    response = httpx.get(f'{BASE_URL}/predict/rain/', params={'date': TEST_DATE})
+    assert response.status_code == 200
+    data = response.json()
+    assert 'input_date' in data
+    assert 'prediction' in data
+    assert data['prediction']['will_rain'] in ['TRUE', 'FALSE']
+    prediction_date = datetime.strptime(data['prediction']['date'], '%Y-%m-%d')
+    input_date = datetime.strptime(TEST_DATE, '%Y-%m-%d')
+    assert (prediction_date - input_date).days == 7
+    print('✓ Rain prediction test passed')
+except Exception as e:
+    print(f'✗ Rain prediction test failed: {e}')
+    sys.exit(1)
+
+# Test 4: Precipitation prediction
+try:
+    response = httpx.get(f'{BASE_URL}/predict/precipitation/fall', params={'date': TEST_DATE})
+    assert response.status_code == 200
+    data = response.json()
+    assert 'input_date' in data
+    assert 'prediction' in data
+    assert 'precipitation_fall' in data['prediction']
+    precipitation = float(data['prediction']['precipitation_fall'])
+    assert precipitation >= 0
+    print('✓ Precipitation prediction test passed')
+except Exception as e:
+    print(f'✗ Precipitation prediction test failed: {e}')
+    sys.exit(1)
+
+# Test 5: Invalid date format
+try:
+    response = httpx.get(f'{BASE_URL}/predict/rain/', params={'date': 'invalid-date'})
+    assert response.status_code == 422
+    print('✓ Invalid date format test passed')
+except Exception as e:
+    print(f'✗ Invalid date format test failed: {e}')
+    sys.exit(1)
+
+# Test 6: Missing date parameter
+try:
+    response = httpx.get(f'{BASE_URL}/predict/rain/')
+    assert response.status_code == 422
+    print('✓ Missing parameter test passed')
+except Exception as e:
+    print(f'✗ Missing parameter test failed: {e}')
+    sys.exit(1)
+
+print('-' * 50)
+print('All tests passed successfully! 🎉')
+"
+    
+    - name: Test Docker build
+      run: |
+        docker build -t weather-api-test .
+        docker run -d --name test-api -p 8001:8000 weather-api-test
+        sleep 30
+        curl -f http://localhost:8001/health/ || exit 1
+        docker stop test-api
+        docker rm test-api
