@@ -1,0 +1,54 @@
+{
+    "best_params": {
+        "alpha": 8.591331362589663
+    },
+    "final_params": {
+        "max_iter": 1000,
+        "random_state": 32,
+        "alpha": 8.591331362589663
+    },
+    "primary_metric": "RMSE",
+    "validation_metrics": {
+        "rmse": 11.420237033452771,
+        "mae": 6.168071022088325,
+        "r2": 0.1147982842364752,
+        "mse": 130.42181390024615
+    },
+    "feature_names": [
+        "temperature_2m_max",
+        "temperature_2m_min",
+        "temperature_2m_mean",
+        "apparent_temperature_max",
+        "apparent_temperature_min",
+        "apparent_temperature_mean",
+        "rain_sum",
+        "precipitation_hours",
+        "sunshine_duration",
+        "daylight_duration",
+        "wind_speed_10m_max",
+        "wind_gusts_10m_max",
+        "wind_direction_10m_dominant",
+        "shortwave_radiation_sum",
+        "et0_fao_evapotranspiration",
+        "month_August",
+        "month_December",
+        "month_February",
+        "month_January",
+        "month_July",
+        "month_June",
+        "month_March",
+        "month_May",
+        "month_November",
+        "month_October",
+        "month_September",
+        "weather_code_1",
+        "weather_code_2",
+        "weather_code_3",
+        "weather_code_51",
+        "weather_code_53",
+        "weather_code_55",
+        "weather_code_61",
+        "weather_code_63",
+        "weather_code_65"
+    ]
+}

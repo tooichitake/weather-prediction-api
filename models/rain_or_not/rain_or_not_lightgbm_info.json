@@ -1,0 +1,55 @@
+{
+    "best_params": {
+        "num_leaves": 20,
+        "learning_rate": 0.07559601546731043,
+        "feature_fraction": 0.7421529650083545,
+        "bagging_fraction": 0.4035994091860981
+    },
+    "final_params": {
+        "objective": "binary",
+        "metric": "auc",
+        "boosting_type": "gbdt",
+        "verbose": -1,
+        "seed": 32,
+        "is_unbalance": true,
+        "force_col_wise": true,
+        "num_leaves": 20,
+        "learning_rate": 0.07559601546731043,
+        "feature_fraction": 0.7421529650083545,
+        "bagging_fraction": 0.4035994091860981
+    },
+    "best_threshold": 0.3297403793775908,
+    "best_iteration": 78,
+    "primary_metric": "AUC",
+    "secondary_metric": "f1",
+    "validation_metrics": {
+        "accuracy": 0.5146585051546392,
+        "precision": 0.5018112816974297,
+        "recall": 0.9588002636783125,
+        "f1": 0.6588155361793682,
+        "auc": 0.6186932471685112
+    },
+    "feature_names": [
+        "weather_code",
+        "temperature_2m_max",
+        "temperature_2m_min",
+        "temperature_2m_mean",
+        "apparent_temperature_max",
+        "apparent_temperature_min",
+        "apparent_temperature_mean",
+        "rain_sum",
+        "precipitation_hours",
+        "sunshine_duration",
+        "daylight_duration",
+        "wind_speed_10m_max",
+        "wind_gusts_10m_max",
+        "wind_direction_10m_dominant",
+        "shortwave_radiation_sum",
+        "et0_fao_evapotranspiration",
+        "month"
+    ],
+    "categorical_features": [
+        "month",
+        "weather_code"
+    ]
+}
