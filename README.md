@@ -15,23 +15,8 @@ A robust, production-ready FastAPI-based machine learning service that provides 
 
 [![Poetry](https://img.shields.io/badge/dependency%20management-poetry-blue.svg)](https://python-poetry.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
-[![linting: flake8](https://img.shields.io/badge/linting-flake8-blue.svg)](https://flake8.pycqa.org/en/latest/)
-
-[![GitHub issues](https://img.shields.io/github/issues/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/issues)
-[![GitHub stars](https://img.shields.io/github/stars/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/network)
-[![GitHub last commit](https://img.shields.io/github/last-commit/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/commits/main)
-[![GitHub repo size](https://img.shields.io/github/repo-size/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
-[![GitHub language count](https://img.shields.io/github/languages/count/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
-[![GitHub top language](https://img.shields.io/github/languages/top/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
-
 [![Render](https://img.shields.io/badge/Deploy-Render-46E3B7.svg)](https://render.com/)
-
-[![API docs](https://img.shields.io/badge/API-Swagger-85EA2D.svg)](https://swagger.io/)
-[![API docs](https://img.shields.io/badge/API-ReDoc-8CA1AF.svg)](https://github.com/Redocly/redoc)
 [![Open Meteo](https://img.shields.io/badge/Weather%20Data-Open%20Meteo-blue.svg)](https://open-meteo.com/)
-[![University](https://img.shields.io/badge/UTS-Advanced%20ML-darkblue.svg)](https://www.uts.edu.au/)
 
 ## 🌟 Features
 
@@ -315,3 +300,8 @@ This project is part of the Advanced Machine Learning course (36120) at UTS.
 **Version**: 2.0.0  
 **Last Updated**: 2025-09-09  
 **Repository**: https://github.com/tooichitake/weather-prediction-api
+
+[![GitHub issues](https://img.shields.io/github/issues/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/issues)
+[![GitHub stars](https://img.shields.io/github/stars/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/network)
+[![GitHub last commit](https://img.shields.io/github/last-commit/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/commits/main)
