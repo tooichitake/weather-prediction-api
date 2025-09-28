@@ -2,6 +2,7 @@
 
 A robust, production-ready FastAPI-based machine learning service that provides weather predictions for Sydney, Australia with enterprise-grade features including error handling, rate limiting, and comprehensive deployment support.
 
+[![CI/CD Pipeline](https://github.com/tooichitake/weather-prediction-api/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/tooichitake/weather-prediction-api/actions/workflows/ci-cd.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-312/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-009688.svg)](https://fastapi.tiangolo.com)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg)](https://www.docker.com/)
