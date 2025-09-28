@@ -17,10 +17,15 @@ A robust, production-ready FastAPI-based machine learning service that provides 
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 [![linting: flake8](https://img.shields.io/badge/linting-flake8-blue.svg)](https://flake8.pycqa.org/en/latest/)
 
+[![GitHub issues](https://img.shields.io/github/issues/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/issues)
+[![GitHub stars](https://img.shields.io/github/stars/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/network)
+[![GitHub last commit](https://img.shields.io/github/last-commit/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
+[![GitHub language count](https://img.shields.io/github/languages/count/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
+[![GitHub top language](https://img.shields.io/github/languages/top/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
+
 [![Render](https://img.shields.io/badge/Deploy-Render-46E3B7.svg)](https://render.com/)
-[![Heroku](https://img.shields.io/badge/Deploy-Heroku-430098.svg)](https://heroku.com/)
-[![Google Cloud](https://img.shields.io/badge/Deploy-Google%20Cloud-4285F4.svg)](https://cloud.google.com/)
-[![AWS](https://img.shields.io/badge/Deploy-AWS-FF9900.svg)](https://aws.amazon.com/)
 
 [![API docs](https://img.shields.io/badge/API-Swagger-85EA2D.svg)](https://swagger.io/)
 [![API docs](https://img.shields.io/badge/API-ReDoc-8CA1AF.svg)](https://github.com/Redocly/redoc)
