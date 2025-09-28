@@ -18,6 +18,12 @@ A robust, production-ready FastAPI-based machine learning service that provides 
 [![Render](https://img.shields.io/badge/Deploy-Render-46E3B7.svg)](https://render.com/)
 [![Open Meteo](https://img.shields.io/badge/Weather%20Data-Open%20Meteo-blue.svg)](https://open-meteo.com/)
 
+[![GitHub stars](https://img.shields.io/github/stars/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
+[![GitHub issues](https://img.shields.io/github/issues/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/commits/main)
+
 ## 🌟 Features
 
 ### Core Functionality
@@ -301,10 +307,19 @@ This project is part of the Advanced Machine Learning course (36120) at UTS.
 **Last Updated**: 2025-09-09  
 **Repository**: https://github.com/tooichitake/weather-prediction-api
 
-[![GitHub issues](https://img.shields.io/github/issues/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/issues)
-[![GitHub stars](https://img.shields.io/github/stars/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/network)
-[![GitHub last commit](https://img.shields.io/github/last-commit/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/commits/main)
-[![GitHub stars](https://img.shields.io/github/stars/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
+---
+
+## 📚 Citation
+
+If you use this project in your research or work, please cite it as:
+
+```bibtex
+@software{weather_prediction_api_2025,
+  author = {tooichitake},
+  title = {Weather Prediction API for Sydney},
+  year = {2025},
+  publisher = {GitHub},
+  url = {https://github.com/tooichitake/weather-prediction-api},
+  version = {1.0.0}
+}
+```
