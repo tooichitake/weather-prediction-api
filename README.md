@@ -305,3 +305,6 @@ This project is part of the Advanced Machine Learning course (36120) at UTS.
 [![GitHub stars](https://img.shields.io/github/stars/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/network)
 [![GitHub last commit](https://img.shields.io/github/last-commit/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/tooichitake/weather-prediction-api)](https://github.com/tooichitake/weather-prediction-api)
