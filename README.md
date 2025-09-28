@@ -5,7 +5,27 @@ A robust, production-ready FastAPI-based machine learning service that provides 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-312/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-009688.svg)](https://fastapi.tiangolo.com)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg)](https://www.docker.com/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![LightGBM](https://img.shields.io/badge/ML-LightGBM-brightgreen.svg)](https://lightgbm.readthedocs.io/)
+[![scikit-learn](https://img.shields.io/badge/ML-scikit--learn-orange.svg)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.0+-blue.svg)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-1.26+-013243.svg)](https://numpy.org/)
+
+[![Poetry](https://img.shields.io/badge/dependency%20management-poetry-blue.svg)](https://python-poetry.org/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![linting: flake8](https://img.shields.io/badge/linting-flake8-blue.svg)](https://flake8.pycqa.org/en/latest/)
+
+[![Render](https://img.shields.io/badge/Deploy-Render-46E3B7.svg)](https://render.com/)
+[![Heroku](https://img.shields.io/badge/Deploy-Heroku-430098.svg)](https://heroku.com/)
+[![Google Cloud](https://img.shields.io/badge/Deploy-Google%20Cloud-4285F4.svg)](https://cloud.google.com/)
+[![AWS](https://img.shields.io/badge/Deploy-AWS-FF9900.svg)](https://aws.amazon.com/)
+
+[![API docs](https://img.shields.io/badge/API-Swagger-85EA2D.svg)](https://swagger.io/)
+[![API docs](https://img.shields.io/badge/API-ReDoc-8CA1AF.svg)](https://github.com/Redocly/redoc)
+[![Open Meteo](https://img.shields.io/badge/Weather%20Data-Open%20Meteo-blue.svg)](https://open-meteo.com/)
+[![University](https://img.shields.io/badge/UTS-Advanced%20ML-darkblue.svg)](https://www.uts.edu.au/)
 
 ## 🌟 Features
 
